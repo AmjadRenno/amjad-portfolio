@@ -1,42 +1,6 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
 import { skillGroups } from "../portfolio";
 import { useLocale } from "../context/LocaleContext";
-
-function SkillBar({ name, level }: { name: string; level: number }) {
-  const [filled, setFilled] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setFilled(true), 200);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div ref={ref} className="group">
-      <div className="mb-2">
-        <span className="font-mono text-xs text-[#9a9690] group-hover:text-text transition-colors">
-          {name}
-        </span>
-      </div>
-      <div className="h-[3px] bg-[#252525] overflow-hidden">
-        <div
-          className="skill-bar-fill h-full bg-[#D4B896]"
-          style={{ width: filled ? `${level}%` : "0%" }}
-        />
-      </div>
-    </div>
-  );
-}
 
 export default function Skills() {
   const { t } = useLocale();
@@ -59,9 +23,14 @@ export default function Skills() {
               <h3 className="font-mono text-xs text-accent uppercase tracking-widest mb-6 pb-4 border-b border-border">
                 {group.category}
               </h3>
-              <div className="space-y-5">
-                {group.skills.map((s) => (
-                  <SkillBar key={s.name} {...s} />
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="font-mono text-xs text-muted px-3 py-1.5 border border-border hover:border-accent/50 hover:text-text transition-colors duration-200"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>

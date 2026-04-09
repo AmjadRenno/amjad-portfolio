@@ -51,17 +51,14 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right: stats grid */}
-        <div className="grid grid-cols-2 gap-4">
+        {/* Right: qualitative highlights */}
+        <div className="space-y-3">
           {about.stats.map((s) => (
             <div
               key={s.label}
-              className="border border-border p-8 hover:border-accent/50 transition-colors duration-300 group"
+              className="border-l-2 border-accent/30 pl-5 py-3 hover:border-accent/70 transition-colors duration-300 group"
             >
-              <p className="font-display text-5xl text-accent mb-2 group-hover:scale-110 transition-transform duration-300 inline-block">
-                {s.num}
-              </p>
-              <p className="font-mono text-xs text-muted uppercase tracking-widest">
+              <p className="font-mono text-xs text-muted uppercase tracking-widest leading-relaxed group-hover:text-text transition-colors duration-300">
                 {s.label}
               </p>
             </div>

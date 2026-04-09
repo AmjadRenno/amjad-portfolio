@@ -1,137 +1,235 @@
-# Portfolio — Next.js
+# Amjad Renno - Developer Portfolio
 
-A modern, dark-themed developer portfolio built with Next.js 14 and Tailwind CSS.
+A personal portfolio built with **Next.js 16**, **TypeScript**, and **Tailwind CSS**, designed to present my work, technical focus, and projects in a clear and professional way.
+
+## Live Demo
+
+https://amjad-portfolio-pink.vercel.app
+
+## About This Project
+
+This portfolio was built to reflect my professional profile as a **Datamatiker student** with a strong focus on:
+
+- **C# / .NET**
+- **SQL / databases**
+- **Security-aware software development**
+- **Architecture, clean design, and structured development**
+
+The project is intentionally designed to be:
+
+- fast and minimal
+- visually consistent
+- easy to maintain
+- bilingual (**Danish / English**)
+- connected to a real working contact form
+
+## Main Features
+
+- Bilingual content (**Danish default + English**)
+- Centralized content management through `portfolio.ts`
+- Responsive modern UI
+- Project showcase with GitHub links
+- Real contact form using **Resend**
+- Next.js API route for email sending
+- Easy deployment with **Vercel**
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Fonts:** Bebas Neue, DM Sans, JetBrains Mono
+- **Email:** Resend
+- **Deployment:** Vercel
+
+## Project Structure
+
+```text
+app/                  # App Router pages and layout
+components/           # Reusable UI sections
+context/              # Locale context (DA / EN)
+portfolio.ts          # Centralized site content
+```
 
 ## Quick Start
 
+Install dependencies:
+
 ```bash
 npm install
+```
+
+Run the development server:
+
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Then open:
 
-## Customize
+http://localhost:3000
 
-| File | What to change |
-|------|----------------|
-| `portfolio.ts` | **All site content** — personal info, skills, projects, contact links, and all localized text (DA + EN) |
-| `context/LocaleContext.tsx` | Default language setting |
-| `app/layout.tsx` | Site title & meta description |
-| `components/Navbar.tsx` | Navigation + language toggle button |
-| `components/About.tsx` | Bio, stats, action buttons |
-| `components/Skills.tsx` | Skills & proficiency levels |
+## Content Management
+
+Most of the site content is managed from:
+
+- `portfolio.ts`
+
+This file contains:
+
+- personal information
+- localized text
+- skills
+- projects
+- contact text
+- footer content
+
+### Files You May Want to Edit
+
+| File | Purpose |
+|---|---|
+| `portfolio.ts` | Main content source for both languages |
+| `context/LocaleContext.tsx` | Language handling |
+| `app/layout.tsx` | Site metadata, title, description |
+| `components/Navbar.tsx` | Navigation and language toggle |
+| `components/About.tsx` | About section |
+| `components/Skills.tsx` | Skills and focus areas |
 | `components/Projects.tsx` | Projects list |
-| `components/Contact.tsx` | Contact form & links |
+| `components/Contact.tsx` | Contact form |
 | `components/Footer.tsx` | Footer links |
 
-## Bilingual Support (DA / EN)
+## Bilingual Support
 
-The site supports **two languages**:
+The site supports two languages:
 
-| Language | Code | Status |
-|---|---|---|
-| Danish | `da` | Default |
-| English | `en` | Secondary |
+- `da` -> Danish (default)
+- `en` -> English
 
-### How to switch language
+Language switching is handled through React Context and does not require routing changes.
 
-A toggle button (DA / EN) is displayed in the **Navbar**. Clicking it switches the entire site between Danish and English instantly (React Context — no page reload, no routing change).
+### Translatable Content
 
-### How to edit translated content
-
-All translatable text lives in **`portfolio.ts`** inside the `locales` object:
+All translatable text lives inside `portfolio.ts` under the `locales` object.
 
 ```ts
 export const locales = {
   da: {
     navigation: [...],
-    hero: { roles: [...], description: "...", ... },
-    about: { paragraphs: [...], stats: [...], ... },
-    skills: { sectionLabel: "...", heading: "..." },
-    projects: { sectionLabel: "...", heading: "...", privateLabel: "..." },
-    contact: { heading: "...", intro: "...", sendLabel: "...", ... },
-    footer: { builtWith: "..." },
+    hero: { ... },
+    about: { ... },
+    skills: { ... },
+    projects: { ... },
+    contact: { ... },
+    footer: { ... },
   },
   en: {
-    // same structure as da — always update both blocks
+    navigation: [...],
+    hero: { ... },
+    about: { ... },
+    skills: { ... },
+    projects: { ... },
+    contact: { ... },
+    footer: { ... },
   },
 };
 ```
 
-> **Important:** Whenever you add or update text, edit **both** `da` and `en` blocks.
+Important: whenever you update text content, update both `da` and `en` blocks.
 
-### Language-independent content
+### Shared Content
 
-The following data is shared across both languages and lives outside `locales`:
+Some data is language-independent and is stored outside `locales`, such as:
 
-- `personal` — name, email, location, GitHub, LinkedIn
-- `skillGroups` — skills & proficiency levels
-- `projects` — project titles, descriptions, tags, links
-- `contactLinks` — email, LinkedIn, GitHub links
-- `footerLinks` — footer icon links
+- personal links
+- skill groups
+- project links
+- contact links
+- footer links
 
-### Adding a third language
+## Contact Form - Resend Setup
 
-1. Add a new key inside `locales` in `portfolio.ts` (e.g. `de: { ... }`)
-2. Update `export type Locale = "da" | "en" | "de"` at the top of `portfolio.ts`
-3. Update the toggle button in `Navbar.tsx` to cycle through all three
+The contact form sends emails through **Resend** using an internal Next.js API route.
 
-## Contact Form — Resend Setup
+It does not use:
 
-The contact form sends emails directly via [Resend](https://resend.com), through an internal Next.js API route (`POST /api/contact`). No database, no third-party form service.
+- Formspree
+- a database
+- external form handling services
 
 ### Environment Variables
 
-Create a `.env.local` file in the project root:
+Create a `.env.local` file in the root of the project:
 
 ```env
-# Get your key from https://resend.com/api-keys
 RESEND_API_KEY=re_your_api_key_here
-
-# The email address that will receive messages from the contact form
 CONTACT_TO_EMAIL=your@email.com
 ```
 
-> **Note:** On Resend's free plan, the `from` address must use `onboarding@resend.dev` (already set) unless you verify a custom domain. The recipient email (`CONTACT_TO_EMAIL`) must match the email registered in your Resend account.
+Notes:
 
-### How it works
+- On Resend's free plan, the sender address may use `onboarding@resend.dev` unless you verify a custom domain.
+- The contact form sends messages to the address defined in `CONTACT_TO_EMAIL`.
+- The API route validates inputs and sends email server-side.
 
-1. User fills out the contact form (name, email, message)
-2. The form submits to `/api/contact` (internal Next.js route)
-3. The backend validates inputs and sends an email via Resend to `CONTACT_TO_EMAIL`
-4. The form displays: idle / sending / success / error states
+### Contact Flow
 
-### Testing locally
+1. A user fills out the form.
+2. The form submits to `/api/contact`.
+3. The API validates the data.
+4. Resend sends the email.
+5. The UI shows success or error feedback.
 
-1. Sign up at [resend.com](https://resend.com) and create an API key
-2. Add your key and email to `.env.local`
-3. Run `npm run dev` and submit the contact form
+### Testing Locally
 
-## Deploy to Vercel
+1. Create a Resend account.
+2. Generate an API key.
+3. Add your values to `.env.local`.
+4. Run `npm run dev`.
+5. Test the contact form locally.
 
-```bash
-# 1. Push to GitHub
-git init
-git add .
-git commit -m "Initial portfolio"
-git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
-git push -u origin main
+## Deployment
 
-# 2. Go to vercel.com → Import GitHub repo → Deploy
-```
+This project is deployed on Vercel and connected to GitHub for automatic deployments.
 
-Add these environment variables in Vercel → **Settings → Environment Variables**:
+### Vercel Environment Variables
 
-| Variable | Value |
+Add these in: Project Settings -> Environment Variables
+
+| Variable | Description |
 |---|---|
 | `RESEND_API_KEY` | Your Resend API key |
-| `CONTACT_TO_EMAIL` | The email that receives messages |
+| `CONTACT_TO_EMAIL` | Email address that receives contact messages |
 
-## Tech Stack
+## Why I Built This
 
-- **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS
-- **Fonts**: Bebas Neue + DM Sans + JetBrains Mono
-- **Email**: Resend
-- **Deployment**: Vercel
+I built this project to create a portfolio that feels both technically solid and professionally relevant.
+
+The goal was to:
+
+- present a clear technical identity
+- highlight my strongest areas
+- keep the design clean and focused
+- support Danish and English content
+- use a real contact flow instead of a fake form
+- maintain all content from a central source
+
+## Current Focus
+
+This portfolio reflects my strongest focus areas at the moment:
+
+- C# / .NET
+- SQL / databases
+- Security-aware development
+- Architecture and clean software design
+
+Additional skills, projects, and ongoing learning are available through my LinkedIn and GitHub profiles.
+
+## Links
+
+- Live Site: https://amjad-portfolio-pink.vercel.app
+- GitHub: https://github.com/AmjadRenno
+- LinkedIn: https://linkedin.com/in/amjad-renno-6a73b32b8
+
+## License
+
+This project is for personal portfolio use.

@@ -118,22 +118,22 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ── Right: mini stats — desktop only ── */}
+          {/* ── Right: context — desktop only ── */}
           <div
             className="hidden lg:flex flex-col justify-end gap-8 border-l border-border/50 pl-8 pb-2 animate-fade-up opacity-0-init"
             style={{ animationDelay: "1000ms", animationFillMode: "forwards" }}
           >
             <div>
-              <p className="font-display text-5xl text-accent leading-none mb-1">01</p>
-              <p className="font-mono text-[10px] text-muted uppercase tracking-widest">Internship</p>
+              <p className="font-mono text-[10px] text-muted uppercase tracking-widest mb-1.5">Based in</p>
+              <p className="font-display text-2xl text-accent leading-none">Odense</p>
             </div>
             <div>
-              <p className="font-display text-5xl text-accent leading-none mb-1">6</p>
-              <p className="font-mono text-[10px] text-muted uppercase tracking-widest">GitHub Repos</p>
+              <p className="font-mono text-[10px] text-muted uppercase tracking-widest mb-1.5">Experience at</p>
+              <p className="font-display text-2xl text-accent leading-none">MedCom</p>
             </div>
             <div>
-              <p className="font-display text-5xl text-accent leading-none mb-1">∞</p>
-              <p className="font-mono text-[10px] text-muted uppercase tracking-widest">Curiosity</p>
+              <p className="font-mono text-[10px] text-muted uppercase tracking-widest mb-1.5">Focus</p>
+              <p className="font-display text-2xl text-accent leading-none">C# / .NET</p>
             </div>
           </div>
         </div>

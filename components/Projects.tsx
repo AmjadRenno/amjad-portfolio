@@ -1,10 +1,17 @@
 "use client";
+import { useState } from "react";
 import { projects } from "../portfolio";
 import { useLocale } from "../context/LocaleContext";
 
 export default function Projects() {
   const { t } = useLocale();
   const proj = t.projects;
+  const [showAll, setShowAll] = useState(false);
+
+  const featured = projects.filter((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
+  const displayed = showAll ? projects : featured;
+
   return (
     <section id="projects" className="py-32 px-6 max-w-6xl mx-auto">
       <div className="mb-16">
@@ -17,7 +24,7 @@ export default function Projects() {
       </div>
 
       <div className="space-y-0">
-        {projects.map((p, i) => (
+        {displayed.map((p) => (
           <div
             key={p.num}
             className="project-card group border-t border-border py-8 grid md:grid-cols-[80px_1fr_auto] gap-6 items-start hover:bg-surface/50 transition-colors duration-300 -mx-6 px-6"
@@ -77,6 +84,18 @@ export default function Projects() {
           </div>
         ))}
         <div className="border-t border-border" />
+
+        {!showAll && rest.length > 0 && (
+          <div className="mt-8">
+            <button
+              onClick={() => setShowAll(true)}
+              className="font-mono text-xs px-6 py-3 border border-border text-muted hover:border-accent hover:text-accent transition-all duration-300 uppercase tracking-widest"
+            >
+              {proj.loadMoreLabel} ({rest.length})
+            </button>
+          </div>
+        )}
+
         <div className="mt-8 flex items-center justify-between flex-wrap gap-4">
           <p className="font-mono text-xs text-muted">
             {proj.moreLabel}{" "}
@@ -94,3 +113,4 @@ export default function Projects() {
     </section>
   );
 }
+

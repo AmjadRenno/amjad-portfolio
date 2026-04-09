@@ -18,7 +18,7 @@ export interface Segment {
 
 export interface SkillGroup {
   category: string;
-  skills: Array<{ name: string; level: number }>;
+  skills: string[];
 }
 
 export interface Project {
@@ -28,6 +28,7 @@ export interface Project {
   tags: string[];
   link: string | null;
   live: string | null;
+  featured?: boolean;
 }
 
 export interface Stat {
@@ -65,69 +66,65 @@ export const personal = {
 
 // ─── Skills (language-independent) ───────────────────────────────────────────
 //
-// Groups ordered by professional focus weight:
-//   1. Core — primary identity (.NET, SQL, REST)
-//   2. IT Security — key differentiator
-//   3. Architecture & Design — serious professional interest
-//   4. Tools & Platforms — supporting day-to-day work
-//   5. Frontend & CMS — secondary, real project experience
+// Groups reflect practical study and project experience — not self-scored levels.
+//   1. Core Technologies — primary stack
+//   2. Architecture & Development — applied approaches
+//   3. Security & Quality — studied and applied in projects
+//   4. Tools & Platforms — day-to-day tooling
 //
 export const skillGroups: SkillGroup[] = [
   {
-    category: "C# / .NET & Databases",
+    category: "Core Technologies",
     skills: [
-      { name: "C# / .NET",    level: 85 },
-      { name: "ASP.NET Core", level: 80 },
-      { name: "EF Core",      level: 78 },
-      { name: "REST APIs",    level: 80 },
-      { name: "SQL Server",   level: 82 },
-      { name: "PostgreSQL",   level: 70 },
-      { name: "MariaDB",      level: 72 },
+      "C# / .NET",
+      "ASP.NET Core",
+      "SQL Server",
+      "PostgreSQL",
+      "EF Core",
+      "REST APIs",
+      "JavaScript",
+      "HTML / CSS",
+      "Blazor",
     ],
   },
   {
-    category: "IT Security",
+    category: "Architecture & Development",
     skills: [
-      { name: "OWASP Top 10",       level: 78 },
-      { name: "Secure Coding",      level: 74 },
-      { name: "Security by Design", level: 72 },
-      { name: "JWT / BCrypt",       level: 72 },
-      { name: "GDPR / ISO 27001",   level: 68 },
-      { name: "Threat Modeling",    level: 65 },
+      "Clean Architecture",
+      "OOP / SOLID",
+      "Domain-Driven Design",
+      "Microservices",
+      "Software Design Patterns",
     ],
   },
   {
-    category: "Architecture & Design",
+    category: "Security & Quality",
     skills: [
-      { name: "Clean Architecture",    level: 76 },
-      { name: "OOP / SOLID",           level: 78 },
-      { name: "Domain-Driven Design",  level: 74 },
-      { name: "Microservices",         level: 72 },
-      { name: "Software Design Patterns", level: 70 },
+      "OWASP Top 10",
+      "Secure Coding",
+      "Security by Design",
+      "JWT / BCrypt",
+      "Threat Modeling",
+      "GDPR",
+      "ISO 27001 Awareness",
+      "DevSecOps",
     ],
   },
   {
-    category: "Tools & DevOps",
+    category: "Tools & Platforms",
     skills: [
-      { name: "Git / GitHub",           level: 82 },
-      { name: "Docker",                 level: 72 },
-      { name: "Postman / Swagger",      level: 75 },
-      { name: "CI/CD / GitHub Actions", level: 65 },
-      { name: "DevOps / DevSecOps",     level: 65 },
-    ],
-  },
-  {
-    category: "Frontend & CMS",
-    skills: [
-      { name: "Blazor",      level: 78 },
-      { name: "HTML / CSS",  level: 82 },
-      { name: "JavaScript",  level: 65 },
-      { name: "Umbraco CMS", level: 80 },
+      "Git / GitHub",
+      "Docker",
+      "Postman / Swagger",
+      "CI/CD / GitHub Actions",
+      "Umbraco CMS",
     ],
   },
 ];
 
 // ─── Projects (language-independent — titles stay in original language) ───────
+// featured: true  → shown immediately (top 3)
+// featured: false → visible after "load more"
 
 export const projects: Project[] = [
   {
@@ -138,15 +135,17 @@ export const projects: Project[] = [
     tags: ["Java", "Web", "Database", "Audit Logging", "Data Modelling"],
     link: null,
     live: null,
+    featured: true,
   },
   {
     num: "02",
-    title: "TANA Travel Management",
+    title: "Customizable B2B Commerce Portal for Industrial Suppliers",
     description:
-      "Travel booking and itinerary management platform built with ASP.NET Core 8 and Clean Architecture, including multilingual support and PDF travel plan generation.",
-    tags: ["ASP.NET Core", "C#", "Clean Architecture", "PDF", "Multilingual"],
-    link: "https://github.com/AmjadRenno/TANA-Travel-Management",
+      "Built with ASP.NET Core, supporting company accounts, custom pricing, quote workflows, and scalable architecture. Applied in a structured project context with focus on clean backend design and extensibility.",
+    tags: ["ASP.NET Core", "B2B Commerce", "Custom Pricing", "Quote Workflow", "Scalable Architecture"],
+    link: null,
     live: null,
+    featured: true,
   },
   {
     num: "03",
@@ -156,33 +155,47 @@ export const projects: Project[] = [
     tags: ["Microservices", ".NET 10", "Domain-Driven Design", "Umbraco CMS", "YARP Gateway", "Dapr", "JWT Auth", ".NET Aspire"],
     link: "https://github.com/AmjadRenno/DentalClinic-Microservices",
     live: null,
+    featured: true,
   },
   {
     num: "04",
+    title: "TANA Travel Management",
+    description:
+      "Travel booking and itinerary management platform built with ASP.NET Core 8 and Clean Architecture, including multilingual support and PDF travel plan generation.",
+    tags: ["ASP.NET Core", "C#", "Clean Architecture", "PDF", "Multilingual"],
+    link: "https://github.com/AmjadRenno/TANA-Travel-Management",
+    live: null,
+    featured: false,
+  },
+  {
+    num: "05",
     title: "EcoTasks AirGuard NASA",
     description:
       "Blazor WebAssembly and ASP.NET Core application combining air-quality and weather data into a near real-time environmental dashboard concept.",
     tags: ["Blazor", "ASP.NET Core", "API Integration", "Dashboard"],
     link: "https://github.com/AmjadRenno/EcoTasks-AirGuard-NASA",
     live: null,
+    featured: false,
   },
   {
-    num: "05",
+    num: "06",
     title: "EDC",
     description:
       "Internal real estate management coursework project built as a Windows Forms application for managing realtors, customers, and property-related workflows.",
     tags: ["C#", "Windows Forms", "Desktop App", "Course Project"],
     link: "https://github.com/AmjadRenno/EDC",
     live: null,
+    featured: false,
   },
   {
-    num: "06",
+    num: "07",
     title: "Umbraco Fundamentals Training",
     description:
-      "Practice project created during Umbraco Fundamentals training to strengthen core CMS concepts and implementation skills.",
+      "Practice project from Umbraco Fundamentals training to explore core CMS concepts and implementation skills.",
     tags: ["Umbraco", "CMS", "Training", "Content Management"],
     link: "https://github.com/AmjadRenno/umbraco-fundamentals-training",
     live: null,
+    featured: false,
   },
 ];
 
@@ -243,7 +256,7 @@ export const locales = {
         "Umbraco Certificeret Professionel",
       ],
       description:
-        "Datamatikerstuderende med stærkt fokus på C#/.NET, SQL/databaser og sikkerhedsbevidst softwareudvikling — understøttet af praktisk erfaring med arkitektur, systemintegration og CMS-platforme.",
+        "Datamatikerstuderende med fokus på C#/.NET, SQL og sikkerhedsbevidst softwareudvikling. Praktisk erfaring fra MedCom — analyse, datamodellering og backend/frontend-udvikling i et reelt udviklingsmiljø. Baseret i Odense og åben for juniorstillinger, studiejobs og samarbejder.",
       cta: {
         primary:   { label: "Se projekter",  href: "#projects" },
         secondary: { label: "Tag kontakt",   href: "#contact"  },
@@ -264,7 +277,7 @@ export const locales = {
         [
           { text: "Gennem mit praktikophold hos " },
           { text: "MedCom", className: "text-accent" },
-          { text: ", har jeg arbejdet med analyse, datamodellering, backend/frontend-udvikling, audit/logging og dataintegritet i et rigtigt udviklingsmiljø." },
+          { text: " arbejdede jeg med analyse, datamodellering, backend/frontend-udvikling, audit-logging og dataintegritet i et reelt udviklingsmiljø. Samarbejdet fortsætter som del af mit afsluttende projekt." },
         ],
         [
           { text: "Jeg har en reel interesse for " },
@@ -278,10 +291,10 @@ export const locales = {
         ],
       ] as Segment[][],
       stats: [
-        { num: "1",    label: "Praktikophold hos MedCom" },
-        { num: "6",    label: "Offentlige GitHub repositories" },
-        { num: "2025", label: "Umbraco certificeret" },
-        { num: "3+",   label: "Kerneområder" },
+        { num: "", label: "Praktisk erfaring fra MedCom"    },
+        { num: "", label: "Fokus på C#/.NET og databaser"   },
+        { num: "", label: "Sikkerhedsbevidst udvikling"      },
+        { num: "", label: "Web, backend og integration"      },
       ] as Stat[],
     },
 
@@ -298,6 +311,7 @@ export const locales = {
       privateLabel: "Privat",
       moreLabel: "Yderligere projekter og kode på",
       moreLinkLabel: "GitHub",
+      loadMoreLabel: "Se flere projekter",
     },
 
     contact: {
@@ -345,7 +359,7 @@ export const locales = {
         "Umbraco Certified Professional",
       ],
       description:
-        "Datamatiker student with a strong focus on C#/.NET, SQL/databases, and security-aware software development — backed by practical experience with clean architecture, system integration, and CMS platforms.",
+        "Datamatiker student with a focus on C#/.NET, SQL, and security-aware software development. Practical experience from MedCom — analysis, data modelling, and backend/frontend development in a real environment. Based in Odense and open to junior roles, student jobs, and collaborations.",
       cta: {
         primary:   { label: "View Projects", href: "#projects" },
         secondary: { label: "Get in Touch",  href: "#contact"  },
@@ -366,7 +380,7 @@ export const locales = {
         [
           { text: "Through my internship at " },
           { text: "MedCom", className: "text-accent" },
-          { text: ", I have worked with analysis, data modelling, backend/frontend development, audit logging, and data integrity in a real development environment." },
+          { text: ", I worked with analysis, data modelling, backend/frontend development, audit logging, and data integrity. The collaboration continues as part of my final project." },
         ],
         [
           { text: "I have a genuine interest in " },
@@ -380,10 +394,10 @@ export const locales = {
         ],
       ] as Segment[][],
       stats: [
-        { num: "1",    label: "Internship at MedCom"        },
-        { num: "6",    label: "Public GitHub Repositories"  },
-        { num: "2025", label: "Umbraco Certified"           },
-        { num: "3+",   label: "Core Focus Areas"            },
+        { num: "", label: "Practical experience from MedCom" },
+        { num: "", label: "Focus on C#/.NET and databases"    },
+        { num: "", label: "Security-aware development"        },
+        { num: "", label: "Web, backend, and integration"     },
       ] as Stat[],
     },
 
@@ -400,6 +414,7 @@ export const locales = {
       privateLabel: "Private",
       moreLabel: "Additional projects and code on",
       moreLinkLabel: "GitHub",
+      loadMoreLabel: "Show more projects",
     },
 
     contact: {
