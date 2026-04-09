@@ -86,7 +86,7 @@ export default function Projects() {
         <div className="border-t border-border" />
 
         {!showAll && rest.length > 0 && (
-          <div className="mt-8">
+          <div className="mt-12">
             <button
               onClick={() => setShowAll(true)}
               className="font-mono text-xs px-6 py-3 border border-border text-muted hover:border-accent hover:text-accent transition-all duration-300 uppercase tracking-widest"
