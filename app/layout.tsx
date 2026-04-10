@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Bebas_Neue, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { LocaleProvider } from "../context/LocaleContext";
+import { Analytics } from "@vercel/analytics/next";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -45,6 +46,7 @@ export default function RootLayout({
       <body>
         <div className="noise-overlay" />
         <LocaleProvider>{children}</LocaleProvider>
+        <Analytics />
       </body>
     </html>
   );

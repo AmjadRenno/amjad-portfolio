@@ -11,9 +11,14 @@ export default function Footer() {
         <span className="font-display text-xl text-text tracking-widest">
           {personal.initials}<span className="text-accent">.</span>
         </span>
-        <p className="font-mono text-xs text-muted">
-          © {year} {personal.fullName} — {t.footer.builtWith}
-        </p>
+        <div className="flex flex-col items-center gap-1">
+          <p className="font-mono text-xs text-muted">
+            © {year} {personal.fullName} — {t.footer.builtWith}
+          </p>
+          <p className="font-mono text-[10px] text-muted/50 text-center max-w-md leading-relaxed">
+            {t.footer.privacy}
+          </p>
+        </div>
         <div className="flex gap-6">
           {footerLinks.map((l) => (
             <a

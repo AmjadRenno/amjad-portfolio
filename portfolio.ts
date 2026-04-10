@@ -333,6 +333,7 @@ export const locales = {
 
     footer: {
       builtWith: "Bygget med Next.js & Tailwind",
+      privacy: "Denne hjemmeside bruger anonym webanalyse til at forstå trafik og forbedre oplevelsen. Der anvendes ikke tredjepartscookies til dette formål.",
     },
   },
 
@@ -436,6 +437,7 @@ export const locales = {
 
     footer: {
       builtWith: "Built with Next.js & Tailwind",
+      privacy: "This website uses anonymous web analytics to understand traffic and improve the experience. No third-party cookies are used for this purpose.",
     },
   },
 } as const;
