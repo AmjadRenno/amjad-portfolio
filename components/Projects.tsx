@@ -168,7 +168,7 @@ function ProjectModal({
 }
 
 export default function Projects() {
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
   const proj = t.projects;
   const [showAll, setShowAll] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -257,7 +257,7 @@ export default function Projects() {
               </div>
 
               <p className="text-[#b8b3ac] text-sm leading-relaxed mb-4 flex-1">
-                {p.description}
+                {p.details?.[locale]?.description ?? p.description}
               </p>
 
               <div className="flex flex-wrap gap-1.5 mb-4">

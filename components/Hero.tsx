@@ -3,21 +3,14 @@ import { useEffect, useState } from "react";
 import { personal } from "../portfolio";
 import { useLocale } from "../context/LocaleContext";
 
-const TERMINAL_LINES = [
-  "amjad.renno",
-  "focus: C# / .NET / Security-aware development",
-  "status: open for opportunities",
-  "location: Odense, Denmark",
-];
-
-function TerminalWindow() {
+function TerminalWindow({ lines }: { lines: readonly string[] }) {
   const [lineIdx, setLineIdx] = useState(0);
   const [typed, setTyped] = useState("");
   const [done, setDone] = useState(false);
 
   useEffect(() => {
     if (done) return;
-    const current = TERMINAL_LINES[lineIdx];
+    const current = lines[lineIdx];
     if (typed.length < current.length) {
       const timer = setTimeout(
         () => setTyped(current.slice(0, typed.length + 1)),
@@ -25,7 +18,7 @@ function TerminalWindow() {
       );
       return () => clearTimeout(timer);
     }
-    if (lineIdx < TERMINAL_LINES.length - 1) {
+    if (lineIdx < lines.length - 1) {
       const timer = setTimeout(() => {
         setLineIdx((i) => i + 1);
         setTyped("");
@@ -34,9 +27,9 @@ function TerminalWindow() {
     } else {
       setDone(true);
     }
-  }, [typed, lineIdx, done]);
+  }, [typed, lineIdx, done, lines]);
 
-  const completedLines = TERMINAL_LINES.slice(0, lineIdx);
+  const completedLines = lines.slice(0, lineIdx);
 
   return (
     <div className="hidden lg:block bg-[#0a0a0a] border border-[#E8D5A3]/20 overflow-hidden">
@@ -50,7 +43,7 @@ function TerminalWindow() {
       </div>
       {/* Body */}
       <div className="p-6 min-h-[200px] space-y-2.5 font-mono text-sm">
-        {completedLines.map((line, i) => (
+        {completedLines.map((line: string, i: number) => (
           <p key={i} className="text-muted/70 text-xs">
             <span className="text-accent/50 select-none">&gt; </span>
             {line}
@@ -182,7 +175,7 @@ export default function Hero() {
             className="animate-fade-up opacity-0-init"
             style={{ animationDelay: "700ms", animationFillMode: "forwards" }}
           >
-            <TerminalWindow />
+            <TerminalWindow lines={hero.terminalLines} />
           </div>
         </div>
       </div>

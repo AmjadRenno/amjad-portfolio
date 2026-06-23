@@ -22,6 +22,7 @@ export interface SkillGroup {
 }
 
 export interface ProjectDetails {
+  description: string;
   context: string;
   role: string;
   built: string[];
@@ -151,6 +152,7 @@ export const projects: Project[] = [
     featured: true,
     details: {
       da: {
+        description: "Afsluttende datamatikerprojekt udviklet i en MedCom-kontekst. Et webbaseret beslutningsstøtteværktøj til at hjælpe brugere med at vurdere, om AI er passende i konkrete arbejdssituationer. Bygget med ASP.NET Core, Clean Architecture, React/TypeScript, EF Core/SQLite og en deterministisk beslutningsmotor med 23 regler. Inkluderer admin-autentificering, login rate limiting, Burp Suite-test, Docker-opsætning, 186 automatiserede tests og GitHub Actions CI.",
         context: "Afsluttende datamatikerprojekt udviklet i en MedCom-kontekst som et webbaseret beslutningsstøtteværktøj til sikker og ansvarlig brug af AI.",
         role: "Full-stack udvikler (afsluttende projekt).",
         built: [
@@ -170,6 +172,7 @@ export const projects: Project[] = [
         ],
       },
       en: {
+        description: "Final datamatiker project developed in a MedCom context. A web-based decision-support tool to help users assess whether AI is appropriate for specific work situations, which tool type can be recommended, and what precautions should be taken. Built with ASP.NET Core, Clean Architecture, React/TypeScript, EF Core/SQLite, and a deterministic decision engine with 23 rules. Includes admin authentication, login rate limiting, Burp Suite security testing, Docker setup, 186 automated tests, and GitHub Actions CI.",
         context: "Final datamatiker project developed in a MedCom context as a web-based decision-support tool for safe and responsible AI use.",
         role: "Full-stack developer (final project).",
         built: [
@@ -202,6 +205,7 @@ export const projects: Project[] = [
     featured: true,
     details: {
       da: {
+        description: "Web- og databaseløsning udviklet under et praktikophold til at understøtte godkendelsesoversigtworkflows. Fokusområder: analyse, planlægning, datamodellering, backend/frontend-udvikling, audit-logging og dataintegritet.",
         context: "Intern web- og databaseløsning udviklet under mit praktikophold hos MedCom til at understøtte godkendelsesoversigtworkflows.",
         role: "Full-stack praktikant-udvikler.",
         built: [
@@ -223,6 +227,7 @@ export const projects: Project[] = [
         ],
       },
       en: {
+        description: "Web and database solution developed in a real internship setting to support approval overview workflows. Focus areas included analysis, planning, data modelling, backend/frontend development, audit logging, and data integrity.",
         context: "Internal web and database solution developed during my MedCom internship to support approval overview workflows.",
         role: "Full-stack intern developer.",
         built: [
@@ -258,6 +263,7 @@ export const projects: Project[] = [
     featured: true,
     details: {
       da: {
+        description: ".NET 10 mikroserviceplatform til tandklinikadministration med Domain-Driven Design-arkitektur. Inkluderer Umbraco CMS, YARP Gateway, JWT-autentificering, Dapr-messaging, rollebaseret adgangskontrol og .NET Aspire-orkestrering. Selvstændige services med SQLite-databaser efter DDD-mønstre.",
         context: ".NET 10 mikroserviceplatform til tandklinikadministration med domænedrevet design og selvstændige services.",
         role: "Full-stack udvikler (personligt projekt).",
         built: [
@@ -277,6 +283,7 @@ export const projects: Project[] = [
         ],
       },
       en: {
+        description: ".NET 10 microservices dental clinic platform with Domain-Driven Design architecture. Features Umbraco CMS, YARP Gateway, JWT authentication, Dapr messaging, role-based access control, and .NET Aspire orchestration. Independent services with SQLite databases following DDD patterns.",
         context: ".NET 10 microservices platform for dental clinic management with Domain-Driven Design and independent services.",
         role: "Full-stack developer (personal project).",
         built: [
@@ -309,6 +316,7 @@ export const projects: Project[] = [
     featured: false,
     details: {
       da: {
+        description: "Rejsebooking- og rejseplanadministrationsplatform bygget med ASP.NET Core 8 og Clean Architecture, med flersproget understøttelse og PDF-generering af rejseplaner.",
         context: "Rejsebooking- og rejseplanadministrationsplatform bygget med ASP.NET Core 8 og ren arkitektur.",
         role: "Full-stack udvikler (personligt projekt).",
         built: [
@@ -326,6 +334,7 @@ export const projects: Project[] = [
         ],
       },
       en: {
+        description: "Travel booking and itinerary management platform built with ASP.NET Core 8 and Clean Architecture, including multilingual support and PDF travel plan generation.",
         context: "Travel booking and itinerary management platform built with ASP.NET Core 8 and Clean Architecture.",
         role: "Full-stack developer (personal project).",
         built: [
@@ -356,6 +365,7 @@ export const projects: Project[] = [
     featured: false,
     details: {
       da: {
+        description: "Blazor WebAssembly og ASP.NET Core-applikation der kombinerer luftkvalitets- og vejrdata til et næsten realtids miljødashboard.",
         context: "Blazor WebAssembly-applikation der kombinerer luftkvalitets- og vejrdata til et næsten realtids miljødashboard.",
         role: "Full-stack udvikler (personligt projekt).",
         built: [
@@ -373,6 +383,7 @@ export const projects: Project[] = [
         ],
       },
       en: {
+        description: "Blazor WebAssembly and ASP.NET Core application combining air-quality and weather data into a near real-time environmental dashboard concept.",
         context: "Blazor WebAssembly application combining air-quality and weather data into a near real-time environmental dashboard.",
         role: "Full-stack developer (personal project).",
         built: [
@@ -403,6 +414,7 @@ export const projects: Project[] = [
     featured: false,
     details: {
       da: {
+        description: "Ejendomsadministrationsprojekt bygget som Windows Forms-applikation til administration af ejendomsmæglere, kunder og ejendomsworkflows.",
         context: "Ejendomsadministrationsprojekt bygget som Windows Forms-applikation til administration af ejendomsmæglere, kunder og ejendomsworkflows.",
         role: "Udvikler (kursusprojekt).",
         built: [
@@ -418,6 +430,7 @@ export const projects: Project[] = [
         ],
       },
       en: {
+        description: "Internal real estate management coursework project built as a Windows Forms application for managing realtors, customers, and property-related workflows.",
         context: "Real estate management coursework project built as a Windows Forms desktop application.",
         role: "Developer (course project).",
         built: [
@@ -446,6 +459,7 @@ export const projects: Project[] = [
     featured: false,
     details: {
       da: {
+        description: "Øvelsesprojekt fra Umbraco Fundamentals-træning til at udforske kernen i CMS-koncepter og implementeringsfærdigheder.",
         context: "Øvelsesprojekt fra Umbraco Fundamentals-træning til at udforske kernen i CMS-koncepter og implementeringsfærdigheder.",
         role: "Udvikler (træningsprojekt).",
         built: [
@@ -461,6 +475,7 @@ export const projects: Project[] = [
         ],
       },
       en: {
+        description: "Practice project from Umbraco Fundamentals training to explore core CMS concepts and implementation skills.",
         context: "Practice project from Umbraco Fundamentals training to explore core CMS concepts and implementation skills.",
         role: "Developer (training project).",
         built: [
@@ -527,6 +542,12 @@ export const locales = {
         "Nyuddannet datamatiker",
         "Sikkerhedsbevidst udvikler",
         "Umbraco Certificeret Professionel",
+      ],
+      terminalLines: [
+        "amjad.renno",
+        "fokus: C# / .NET / sikkerhedsbevidst udvikling",
+        "status: åben for muligheder",
+        "lokation: Odense, Danmark",
       ],
       description:
         "Nyuddannet datamatiker fra UCL Vejle med fokus på C#/.NET, ASP.NET Core, databaser og sikkerhedsbevidst softwareudvikling. Praktisk erfaring fra MedCom med analyse, datamodellering, backend/frontend-udvikling, test og sikkerhedsarbejde i et reelt udviklingsmiljø. Baseret i Odense og åben for juniorstillinger, studiejob og relevante samarbejder.",
@@ -641,6 +662,12 @@ export const locales = {
         "Newly graduated Datamatiker",
         "Security-aware Developer",
         "Umbraco Certified Professional",
+      ],
+      terminalLines: [
+        "amjad.renno",
+        "focus: C# / .NET / Security-aware development",
+        "status: open for opportunities",
+        "location: Odense, Denmark",
       ],
       description:
         "Newly graduated Datamatiker from UCL Vejle with a focus on C#/.NET, ASP.NET Core, databases, and security-aware software development. Practical experience from MedCom with analysis, data modelling, backend/frontend development, testing, and security work in a real development environment. Based in Odense and open to junior roles, student jobs, and relevant collaborations.",
