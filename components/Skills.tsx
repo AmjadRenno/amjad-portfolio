@@ -4,36 +4,28 @@ import { skillGroups } from "../portfolio";
 import { useLocale } from "../context/LocaleContext";
 import { useInView } from "../hooks/useInView";
 
-// Local icons from /public/icons/ — icon2 files take priority over icon
+// Local icons from /public/icons/ — skills without a matching file show text-only
 const SKILL_ICONS: Record<string, string> = {
   // Core Technologies
   "C# / .NET":              "/icons/c-sharp.png",
   "ASP.NET Core":           "/icons/ASP.NET CORE.png",
-  "SQL Server":             "/icons/sql-server.png",
-  "PostgreSQL":             "/icons/POSTGRESQL.png",
-  "JavaScript":             "/icons/JAVASCRIPT.png",
   "HTML / CSS":             "/icons/HTML-CSS.png",
-  "REST APIs":              "/icons/REST APIs.png",
   // Architecture & Development
   "Clean Architecture":     "/icons/clean architecture.png",
+  "REST APIs":              "/icons/REST APIs.png",
   "OOP / SOLID":            "/icons/oop.png",
-  "Domain-Driven Design":   "/icons/ddd.png",
   "Microservices":          "/icons/Microservices.png",
   "Software Design Patterns": "/icons/Software Design Patterns.png",
   // Security & Quality
-  "OWASP Top 10":           "/icons/OWASP Top 10.png",
-  "Secure Coding":          "/icons/Secure Coding.png",
-  "JWT / BCrypt":           "/icons/JWT - BCrypt.png",
-  "GDPR":                   "/icons/GDPR.png",
-  "ISO 27001 Awareness":    "/icons/ISO 27001 Awareness.png",
   "Threat Modeling":        "/icons/Threat Modeling.png",
-  "DevSecOps":              "/icons/DevSecOps.png",
+  "GDPR Awareness":         "/icons/GDPR.png",
+  "CI/CD":                  "/icons/CI-CD.png",
   // Tools & Platforms
   "Git / GitHub":           "/icons/GIT.png",
   "Docker":                 "/icons/docker.png",
+  "GitHub Actions":         "/icons/CI-CD.png",
   "Postman / Swagger":      "/icons/POSTMAN.png",
-  "CI/CD / GitHub Actions": "/icons/CI-CD.png",
-  "Umbraco CMS":            "/icons/Umbraco.png",
+  "SQL Server":             "/icons/sql-server.png",
 };
 
 export default function Skills() {

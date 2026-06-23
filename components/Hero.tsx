@@ -5,7 +5,7 @@ import { useLocale } from "../context/LocaleContext";
 
 const TERMINAL_LINES = [
   "amjad.renno",
-  "focus: C# / .NET / Security",
+  "focus: C# / .NET / Security-aware development",
   "status: open for opportunities",
   "location: Odense, Denmark",
 ];
@@ -121,7 +121,7 @@ export default function Hero() {
           {/* ── Left: main content ── */}
           <div>
             {/* Pre-label — no animation delay so it is the LCP element immediately */}
-            <p className="font-mono text-xs text-accent uppercase tracking-[0.3em] mb-6">
+            <p className="font-mono text-xs text-accent uppercase tracking-[0.3em] mb-6 whitespace-pre-line">
               {hero.preLabel}
             </p>
 
