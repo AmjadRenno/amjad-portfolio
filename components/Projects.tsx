@@ -15,6 +15,7 @@ const CARD_GRADIENTS: Record<string, string> = {
   "05": "linear-gradient(135deg, #091a0c 0%, #0b2010 100%)",
   "06": "linear-gradient(135deg, #0c0c1c 0%, #10101f 100%)",
   "07": "linear-gradient(135deg, #170a1a 0%, #1e0e22 100%)",
+  "08": "linear-gradient(135deg, #0f0f1a 0%, #13132a 100%)",
 };
 
 function ArchDiagram() {

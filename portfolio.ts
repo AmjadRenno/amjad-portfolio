@@ -306,6 +306,57 @@ export const projects: Project[] = [
   },
   {
     num: "04",
+    title: "Customizable B2B Commerce Portal for Industrial Suppliers",
+    description:
+      "Built with ASP.NET Core, supporting company accounts, custom pricing, quote workflows, and scalable architecture. Applied in a structured project context with focus on clean backend design and extensibility.",
+    tags: ["ASP.NET Core", "B2B Commerce", "Custom Pricing", "Quote Workflow", "Scalable Architecture"],
+    link: null,
+    live: null,
+    image: "/projectImages/Customizable B2B Commerce Portal for Industrial Suppliers.png",
+    featured: false,
+    details: {
+      da: {
+        description: "ASP.NET Core-baseret B2B handelsportal til industrielle leverandører med fokus på ren backend-arkitektur og udvidelsesmuligheder. Understøtter virksomhedskontoer, brugerdefineret prislogik, tilbudsworkflows og rollebaseret adgangskontrol.",
+        context: "ASP.NET Core-baseret B2B handelsportal til industrielle leverandører med fokus på ren backend-arkitektur og udvidelsesmuligheder.",
+        role: "Backend-udvikler (kursusprojekt).",
+        built: [
+          "Virksomhedskontoer og brugeradministration",
+          "Brugerdefineret prislogik",
+          "Tilbudsworkflows",
+          "Produktkatalog",
+          "Rollebaseret adgangskontrol",
+        ],
+        techStack: "ASP.NET Core · C# · SQL Server · EF Core · REST API",
+        quality: [
+          "Ren arkitektur",
+          "Dokumentation",
+          "Unit testing",
+          "API testing",
+        ],
+      },
+      en: {
+        description: "Built with ASP.NET Core, supporting company accounts, custom pricing, quote workflows, and scalable architecture. Applied in a structured project context with focus on clean backend design and extensibility.",
+        context: "ASP.NET Core B2B commerce portal for industrial suppliers, focused on clean backend architecture and extensibility.",
+        role: "Backend developer (course project).",
+        built: [
+          "Company account management",
+          "Custom pricing logic",
+          "Quote workflows",
+          "Product catalogue",
+          "Role-based access control",
+        ],
+        techStack: "ASP.NET Core · C# · SQL Server · EF Core · REST API",
+        quality: [
+          "Clean architecture",
+          "Documentation",
+          "Unit testing",
+          "API testing",
+        ],
+      },
+    },
+  },
+  {
+    num: "05",
     title: "TANA Travel Management",
     description:
       "Travel booking and itinerary management platform built with ASP.NET Core 8 and Clean Architecture, including multilingual support and PDF travel plan generation.",
@@ -354,7 +405,7 @@ export const projects: Project[] = [
     },
   },
   {
-    num: "05",
+    num: "06",
     title: "EcoTasks AirGuard NASA",
     description:
       "Blazor WebAssembly and ASP.NET Core application combining air-quality and weather data into a near real-time environmental dashboard concept.",
@@ -403,7 +454,7 @@ export const projects: Project[] = [
     },
   },
   {
-    num: "06",
+    num: "07",
     title: "EDC",
     description:
       "Internal real estate management coursework project built as a Windows Forms application for managing realtors, customers, and property-related workflows.",
@@ -448,7 +499,7 @@ export const projects: Project[] = [
     },
   },
   {
-    num: "07",
+    num: "08",
     title: "Umbraco Fundamentals Training",
     description:
       "Practice project from Umbraco Fundamentals training to explore core CMS concepts and implementation skills.",
