@@ -63,6 +63,7 @@ function ProjectModal({
   const { locale, t } = useLocale();
   const proj = t.projects;
   const details = project.details?.[locale];
+  const displayTitle = project.localizedTitle?.[locale] ?? project.title;
 
   // Close on Escape key + lock body scroll
   useEffect(() => {
@@ -95,7 +96,7 @@ function ProjectModal({
         {/* Header — fixed inside modal */}
         <div className="flex items-start justify-between gap-4 p-7 pb-4 border-b border-border shrink-0">
           <h3 className="font-display text-lg text-accent leading-tight">
-            {project.title}
+            {displayTitle}
           </h3>
           <button
             onClick={onClose}
@@ -197,7 +198,11 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {displayed.map((p) => (
+        {displayed.map((p) => {
+          const displayTitle = p.localizedTitle?.[locale] ?? p.title;
+          const displayDescription = p.details?.[locale]?.description ?? p.description;
+
+          return (
           <div
             key={p.num}
             className="project-card group flex flex-col border border-border hover:border-accent/50 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(232,213,163,0.08)] transition-all duration-300"
@@ -214,7 +219,7 @@ export default function Projects() {
               {p.image && (
                 <Image
                   src={p.image}
-                  alt={p.title}
+                  alt={displayTitle}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover object-top opacity-80 group-hover:opacity-95 group-hover:scale-[1.03] transition-all duration-500"
@@ -238,7 +243,7 @@ export default function Projects() {
                     {p.num}
                   </span>
                   <h3 className="font-display text-xl text-text group-hover:text-accent transition-colors duration-300 leading-tight">
-                    {p.title}
+                    {displayTitle}
                   </h3>
                 </div>
                 {p.link ? (
@@ -258,7 +263,7 @@ export default function Projects() {
               </div>
 
               <p className="text-[#b8b3ac] text-sm leading-relaxed mb-4 flex-1">
-                {p.details?.[locale]?.description ?? p.description}
+                {displayDescription}
               </p>
 
               <div className="flex flex-wrap gap-1.5 mb-4">
@@ -282,7 +287,8 @@ export default function Projects() {
               )}
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       {selectedProject && (

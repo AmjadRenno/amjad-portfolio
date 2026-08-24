@@ -33,6 +33,10 @@ export interface ProjectDetails {
 export interface Project {
   num: string;
   title: string;
+  localizedTitle?: {
+    da: string;
+    en: string;
+  };
   description: string;
   tags: string[];
   link: string | null;
@@ -83,7 +87,7 @@ export const personal = {
 // Groups reflect practical study and project experience — not self-scored levels.
 //   1. Core Technologies — primary stack
 //   2. Architecture & Development — applied approaches
-//   3. Security & Quality — studied and applied in projects
+//   3. Security & Quality — applied in projects
 //   4. Tools & Platforms — day-to-day tooling
 //
 export const skillGroups: SkillGroup[] = [
@@ -120,6 +124,25 @@ export const skillGroups: SkillGroup[] = [
       "GDPR Awareness",
       "xUnit / Integration Testing",
       "CI/CD",
+    ],
+  },
+  {
+    category: "AI & Agentic AI",
+    skills: [
+      "Agentic AI",
+      "AI Agents",
+      "RAG",
+      "OpenAI API",
+      "LLM Integration",
+      "Function Calling",
+      "Structured Outputs",
+      "AI Guardrails",
+      "Evidence Grounding",
+      "Generative AI",
+      "Python",
+      "FastAPI",
+      "Pydantic",
+      "pytest",
     ],
   },
   {
@@ -195,6 +218,59 @@ export const projects: Project[] = [
   },
   {
     num: "02",
+    title: "Job Fit Agent",
+    localizedTitle: {
+      da: "Job Fit Agent — evidensbaseret AI-matchingsværktøj",
+      en: "Job Fit Agent — evidence-first AI matching system",
+    },
+    description:
+      "Personal project focused on agentic AI, RAG and evidence-based candidate matching. The system analyzes job postings against a candidate profile and generates traceable analyses and grounded cover letters. A guardrail layer validates AI-generated claims against verified candidate data to reduce the risk of hallucinated qualifications.",
+    tags: ["Python", "FastAPI", "React", "TypeScript", "RAG", "OpenAI API", "Structured Outputs", "Function Calling", "Pydantic", "pytest", "AI Guardrails"],
+    link: "https://github.com/AmjadRenno/Job-Fit-Agent",
+    live: null,
+    image: "/projectImages/match-analysis.png",
+    featured: true,
+    details: {
+      da: {
+        description: "Personligt projekt udviklet med fokus på agentic AI, RAG og evidensbaseret kandidatmatchning. Systemet analyserer jobopslag mod en kandidatprofil og genererer sporbare analyser og grounded cover letters. Et guardrail-lag validerer AI-genererede påstande mod verificerede kandidatdata for at reducere risikoen for hallucinerede kvalifikationer.",
+        context: "Personligt projekt udviklet med fokus på agentic AI, RAG og evidensbaseret kandidatmatchning.",
+        role: "Full-stack udvikler (personligt projekt).",
+        built: [
+          "Kandidat- og jobanalyse",
+          "Grounded cover letters",
+          "Sporbare AI-analyser",
+          "RAG-baseret informationsflow",
+          "Guardrail-validering af AI-påstande",
+        ],
+        techStack: "Python · FastAPI · React · TypeScript · RAG · OpenAI API · Structured Outputs · Function Calling · Pydantic · pytest",
+        quality: [
+          "AI Guardrails",
+          "Evidence Grounding",
+          "GitHub",
+        ],
+      },
+      en: {
+        description: "Personal project focused on agentic AI, RAG and evidence-based candidate matching. The system analyzes job postings against a candidate profile and generates traceable analyses and grounded cover letters. A guardrail layer validates AI-generated claims against verified candidate data to reduce the risk of hallucinated qualifications.",
+        context: "Personal project focused on agentic AI, RAG and evidence-based candidate matching.",
+        role: "Full-stack developer (personal project).",
+        built: [
+          "Candidate and job analysis",
+          "Grounded cover letters",
+          "Traceable AI analyses",
+          "RAG-based information flow",
+          "Guardrail validation of AI claims",
+        ],
+        techStack: "Python · FastAPI · React · TypeScript · RAG · OpenAI API · Structured Outputs · Function Calling · Pydantic · pytest",
+        quality: [
+          "AI Guardrails",
+          "Evidence Grounding",
+          "GitHub",
+        ],
+      },
+    },
+  },
+  {
+    num: "03",
     title: "Godkendelsesoversigt – MedCom",
     description:
       "Web and database solution developed in a real internship setting to support approval overview workflows. Focus areas included analysis, planning, data modelling, backend/frontend development, audit logging, and data integrity.",
@@ -251,7 +327,7 @@ export const projects: Project[] = [
     },
   },
   {
-    num: "03",
+    num: "04",
     title: "DentalClinic-Microservices",
     description:
       ".NET 10 microservices dental clinic platform with Domain-Driven Design architecture. Features Umbraco CMS, YARP Gateway, JWT authentication, Dapr messaging, role-based access control, and .NET Aspire orchestration. Independent services with SQLite databases following DDD patterns.",
@@ -260,7 +336,7 @@ export const projects: Project[] = [
 
     live: null,
     image: "/projectImages/DentalClinic-Microservices.png",
-    featured: true,
+    featured: false,
     details: {
       da: {
         description: ".NET 10 mikroserviceplatform til tandklinikadministration med Domain-Driven Design-arkitektur. Inkluderer Umbraco CMS, YARP Gateway, JWT-autentificering, Dapr-messaging, rollebaseret adgangskontrol og .NET Aspire-orkestrering. Selvstændige services med SQLite-databaser efter DDD-mønstre.",
@@ -305,7 +381,7 @@ export const projects: Project[] = [
     },
   },
   {
-    num: "04",
+    num: "05",
     title: "Customizable B2B Commerce Portal for Industrial Suppliers",
     description:
       "Built with ASP.NET Core, supporting company accounts, custom pricing, quote workflows, and scalable architecture. Applied in a structured project context with focus on clean backend design and extensibility.",
@@ -356,7 +432,7 @@ export const projects: Project[] = [
     },
   },
   {
-    num: "05",
+    num: "06",
     title: "TANA Travel Management",
     description:
       "Travel booking and itinerary management platform built with ASP.NET Core 8 and Clean Architecture, including multilingual support and PDF travel plan generation.",
@@ -405,7 +481,7 @@ export const projects: Project[] = [
     },
   },
   {
-    num: "06",
+    num: "07",
     title: "EcoTasks AirGuard NASA",
     description:
       "Blazor WebAssembly and ASP.NET Core application combining air-quality and weather data into a near real-time environmental dashboard concept.",
@@ -454,7 +530,7 @@ export const projects: Project[] = [
     },
   },
   {
-    num: "07",
+    num: "08",
     title: "EDC",
     description:
       "Internal real estate management coursework project built as a Windows Forms application for managing realtors, customers, and property-related workflows.",
@@ -499,7 +575,7 @@ export const projects: Project[] = [
     },
   },
   {
-    num: "08",
+    num: "09",
     title: "Umbraco Fundamentals Training",
     description:
       "Practice project from Umbraco Fundamentals training to explore core CMS concepts and implementation skills.",
@@ -582,26 +658,27 @@ export const locales = {
     ] as NavLink[],
 
     hero: {
-      availability: "Åben for juniorstillinger, studiejobs og samarbejder",
+      availability: "status: åben for junior- og graduate-muligheder",
       locationLabel: "Odense, Danmark",
       get preLabel() {
-        return `Nyuddannet datamatiker · ${this.locationLabel}\n${this.availability}`;
+        return `Nyuddannet datamatiker · Junior C#/.NET Developer · ${this.locationLabel}\n${this.availability}`;
       },
       roles: [
-        "C# / .NET Udvikler",
-        "Softwareudvikler",
-        "Nyuddannet datamatiker",
-        "Sikkerhedsbevidst udvikler",
+        "Junior C# / .NET Developer",
+        "Backend Developer",
+        "Full-stack Developer",
+        "Agentic AI / AI Developer",
+        "Security-aware Developer",
         "Umbraco Certificeret Professionel",
       ],
       terminalLines: [
         "amjad.renno",
-        "fokus: C# / .NET / sikkerhedsbevidst udvikling",
-        "status: åben for muligheder",
+        "fokus: C# / .NET / ASP.NET Core / agentic AI",
+        "status: åben for junior- og graduate-muligheder",
         "lokation: Odense, Danmark",
       ],
       description:
-        "Nyuddannet datamatiker fra UCL Vejle med fokus på C#/.NET, ASP.NET Core, databaser og sikkerhedsbevidst softwareudvikling. Praktisk erfaring fra MedCom med analyse, datamodellering, backend/frontend-udvikling, test og sikkerhedsarbejde i et reelt udviklingsmiljø. Baseret i Odense og åben for juniorstillinger, studiejob og relevante samarbejder.",
+        "Nyuddannet datamatiker fra UCL Vejle med praktisk erfaring fra MedCom inden for analyse, datamodellering, backend/frontend-udvikling og sikkerhedsbevidst softwareudvikling. Jeg arbejder primært med C#/.NET, ASP.NET Core, SQL, React/TypeScript og API-udvikling. Jeg har desuden praktisk erfaring med generativ AI og agentic AI gennem mit projekt Job Fit Agent.",
       cta: {
         primary:   { label: "Se projekter",  href: "#projects" },
         secondary: { label: "Tag kontakt",   href: "#contact"  },
@@ -619,7 +696,7 @@ export const locales = {
           { text: "UCL Vejle", className: "text-accent" },
           { text: " med praktisk erfaring inden for " },
           { text: "C#, .NET, ASP.NET Core, SQL og sikkerhedsbevidst softwareudvikling", className: "text-text" },
-          { text: ". Jeg arbejder især med ren arkitektur, databaser, API-design og systemintegration." },
+          { text: ". Jeg arbejder især med backend-udvikling, databaser, API-design, systemintegration og ren arkitektur." },
         ],
         [
           { text: "Gennem mit praktikforløb hos " },
@@ -634,16 +711,21 @@ export const locales = {
           { text: "." },
         ],
         [
+          { text: "Mit personlige projekt, " },
+          { text: "Job Fit Agent", className: "text-accent" },
+          { text: ", arbejder jeg med agentic AI, RAG og evidensbaseret kandidatmatchning. Jeg bruger OpenAI API, function calling, structured outputs og evidence-grounded validering til at reducere risikoen for hallucinerede kvalifikationer." },
+        ],
+        [
           { text: "Jeg har en særlig interesse for " },
-          { text: "sikkerhedsbevidst softwareudvikling, ren arkitektur og domænedrevet design", className: "text-text" },
+          { text: "sikkerhedsbevidst softwareudvikling, ren arkitektur, domænedrevet design og agentic AI", className: "text-text" },
           { text: " — ikke som buzzwords, men som principper jeg forsøger at anvende konkret i mine projekter." },
         ],
       ] as Segment[][],
       stats: [
         { num: "", label: "NYUDDANNET DATAMATIKER — UCL VEJLE 2026" },
         { num: "", label: "PRAKTISK ERFARING FRA MEDCOM"             },
-        { num: "", label: "C# / .NET / ASP.NET CORE"                 },
-        { num: "", label: "CLEAN ARCHITECTURE & SECURITY-AWARE DEV"  },
+        { num: "", label: "C# / .NET / ASP.NET CORE / SQL"           },
+        { num: "", label: "AGENTIC AI / RAG / OPENAI API"            },
       ] as Stat[],
     },
 
@@ -673,7 +755,7 @@ export const locales = {
       sectionLabel: "04 / Kontakt",
       heading: "LAD OS TALE",
       intro:
-        "Åben for juniorstillinger, studiejob og relevante softwareprojekter.",
+        "Åben for juniorstillinger, graduate- og trainee-muligheder samt relevante softwareprojekter.",
       namePlaceholder:    "Dit navn",
       emailPlaceholder:   "navn@email.com",
       messagePlaceholder: "Fortæl mig kort om stillingen, projektet eller samarbejdet...",
@@ -702,26 +784,27 @@ export const locales = {
     ] as NavLink[],
 
     hero: {
-      availability: "Open to junior roles, student jobs, and collaborations",
+      availability: "status: open to junior and graduate opportunities",
       locationLabel: "Odense, Denmark",
       get preLabel() {
-        return `Newly graduated Datamatiker · ${this.locationLabel}\n${this.availability}`;
+        return `Newly Graduated Computer Science AP Graduate · Junior C#/.NET Developer · ${this.locationLabel}\n${this.availability}`;
       },
       roles: [
-        "C# / .NET Developer",
-        "Software Developer",
-        "Newly graduated Datamatiker",
+        "Junior C# / .NET Developer",
+        "Backend Developer",
+        "Full-stack Developer",
+        "Agentic AI / AI Developer",
         "Security-aware Developer",
         "Umbraco Certified Professional",
       ],
       terminalLines: [
         "amjad.renno",
-        "focus: C# / .NET / Security-aware development",
-        "status: open for opportunities",
+        "focus: C# / .NET / ASP.NET Core / agentic AI",
+        "status: open to junior and graduate opportunities",
         "location: Odense, Denmark",
       ],
       description:
-        "Newly graduated Datamatiker from UCL Vejle with a focus on C#/.NET, ASP.NET Core, databases, and security-aware software development. Practical experience from MedCom with analysis, data modelling, backend/frontend development, testing, and security work in a real development environment. Based in Odense and open to junior roles, student jobs, and relevant collaborations.",
+        "Newly graduated Computer Science AP graduate from UCL Vejle with practical experience from MedCom in analysis, data modelling, backend/frontend development and security-aware software development. I mainly work with C#/.NET, ASP.NET Core, SQL, React/TypeScript and API development. I also have practical experience with generative AI and agentic AI through my Job Fit Agent project.",
       cta: {
         primary:   { label: "View Projects", href: "#projects" },
         secondary: { label: "Get in Touch",  href: "#contact"  },
@@ -735,11 +818,11 @@ export const locales = {
       githubLabel:   "GitHub",
       paragraphs: [
         [
-          { text: "I am a newly graduated Datamatiker from " },
+          { text: "I am a newly graduated Computer Science AP graduate from " },
           { text: "UCL Vejle", className: "text-accent" },
           { text: " with hands-on experience in " },
           { text: "C#, .NET, ASP.NET Core, SQL, and security-aware software development", className: "text-text" },
-          { text: ". My primary focus is clean architecture, databases, API design, and system integration." },
+          { text: ". My primary focus is backend development, databases, API design, system integration, and clean architecture." },
         ],
         [
           { text: "Through my internship at " },
@@ -754,16 +837,21 @@ export const locales = {
           { text: "." },
         ],
         [
+          { text: "My personal project, " },
+          { text: "Job Fit Agent", className: "text-accent" },
+          { text: ", focuses on agentic AI, RAG, and evidence-based candidate matching. I use OpenAI API, function calling, structured outputs, and evidence-grounded validation to reduce the risk of hallucinated qualifications." },
+        ],
+        [
           { text: "I have a particular interest in " },
-          { text: "security-aware software development, clean architecture, and domain-driven design", className: "text-text" },
+          { text: "security-aware software development, clean architecture, domain-driven design, and agentic AI", className: "text-text" },
           { text: " — not as buzzwords, but as principles I actively try to apply in my projects." },
         ],
       ] as Segment[][],
       stats: [
-        { num: "", label: "NEWLY GRADUATED DATAMATIKER — UCL VEJLE 2026" },
-        { num: "", label: "PRACTICAL EXPERIENCE FROM MEDCOM"              },
-        { num: "", label: "C# / .NET / ASP.NET CORE"                      },
-        { num: "", label: "CLEAN ARCHITECTURE & SECURITY-AWARE DEV"       },
+        { num: "", label: "NEWLY GRADUATED COMPUTER SCIENCE AP GRADUATE — UCL VEJLE 2026" },
+        { num: "", label: "PRACTICAL EXPERIENCE FROM MEDCOM"                                },
+        { num: "", label: "C# / .NET / ASP.NET CORE / SQL"                                  },
+        { num: "", label: "AGENTIC AI / RAG / OPENAI API"                                   },
       ] as Stat[],
     },
 
@@ -793,7 +881,7 @@ export const locales = {
       sectionLabel: "04 / Contact",
       heading: "LET'S TALK",
       intro:
-        "Open to junior roles, student jobs, and relevant software projects.",
+        "Open to junior, graduate and trainee opportunities, as well as relevant software projects.",
       namePlaceholder:    "Your name",
       emailPlaceholder:   "name@email.com",
       messagePlaceholder: "Tell me briefly about the role, project, or collaboration...",

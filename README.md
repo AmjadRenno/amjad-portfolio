@@ -8,12 +8,21 @@ https://amjad-portfolio-pink.vercel.app
 
 ## About This Project
 
-This portfolio was built to reflect my professional profile as a **Datamatiker student** with a strong focus on:
+This portfolio was built to reflect my professional profile as a **newly graduated Datamatiker and junior C#/.NET developer** with a strong focus on:
 
 - **C# / .NET**
+- **ASP.NET Core**
+- **React / TypeScript**
 - **SQL / databases**
 - **Security-aware software development**
 - **Architecture, clean design, and structured development**
+- **Agentic AI and AI integration**
+
+The top projects currently highlighted on the site are:
+
+- **MedCom.AIGuide** — final project in a MedCom context
+- **Job Fit Agent** — personal evidence-first AI matching project
+- **Godkendelsesoversigt – MedCom** — internship project
 
 The project is intentionally designed to be:
 
@@ -202,12 +211,12 @@ Add these in: Project Settings -> Environment Variables
 
 ## Why I Built This
 
-I built this project to create a portfolio that feels both technically solid and professionally relevant.
+I built this project to present a portfolio that feels technically solid and professionally relevant.
 
 The goal was to:
 
-- present a clear technical identity
-- highlight my strongest areas
+- present a clear junior developer identity
+- highlight my strongest backend, full-stack, and AI-related areas
 - keep the design clean and focused
 - support Danish and English content
 - use a real contact flow instead of a fake form
@@ -217,10 +226,13 @@ The goal was to:
 
 This portfolio reflects my strongest focus areas at the moment:
 
-- C# / .NET
-- SQL / databases
-- Security-aware development
-- Architecture and clean software design
+- C# / .NET and ASP.NET Core
+- SQL / databases and API development
+- React / TypeScript for full-stack delivery
+- Security-aware development and clean architecture
+- Agentic AI, RAG, OpenAI API, and AI guardrails
+
+I am currently open to junior software development, junior .NET / C# roles, backend or full-stack positions, API and integration work, AI and agentic AI development, and graduate or trainee opportunities.
 
 Additional skills, projects, and ongoing learning are available through my LinkedIn and GitHub profiles.
 
