@@ -246,15 +246,29 @@ export default function Projects() {
                     {displayTitle}
                   </h3>
                 </div>
-                {p.link ? (
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shrink-0 font-mono text-[10px] px-3 py-1.5 bg-rust text-white hover:opacity-90 transition-opacity uppercase tracking-widest whitespace-nowrap mt-1"
-                  >
-                    GitHub ↗
-                  </a>
+                {p.link || p.live ? (
+                  <div className="shrink-0 flex flex-col items-end gap-1.5 mt-1">
+                    {p.link && (
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-[10px] px-3 py-1.5 bg-rust text-white hover:opacity-90 transition-opacity uppercase tracking-widest whitespace-nowrap"
+                      >
+                        GitHub ↗
+                      </a>
+                    )}
+                    {p.live && (
+                      <a
+                        href={p.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-[10px] px-3 py-1.5 border border-accent/60 text-accent hover:bg-accent/10 transition-all duration-200 uppercase tracking-widest whitespace-nowrap"
+                      >
+                        {proj.liveDemoLabel} ↗
+                      </a>
+                    )}
+                  </div>
                 ) : (
                   <span className="shrink-0 font-mono text-[9px] px-2.5 py-1 border border-border/60 text-muted/60 uppercase tracking-widest whitespace-nowrap mt-1">
                     {proj.privateLabel}
