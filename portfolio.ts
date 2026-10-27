@@ -227,15 +227,15 @@ export const projects: Project[] = [
       en: "Job Fit Agent — evidence-backed job-fit analysis",
     },
     description:
-      "Personal full-stack AI project for evidence-backed job-fit assessment. The system structures job requirements, matches them against verified candidate evidence, and presents supporting evidence, gaps, confidence, and recommendations. Built with FastAPI, React/TypeScript, and PostgreSQL, with LLM workflows, a bounded agentic-search flow, and read-only MCP tools. The public demo runs on Azure with Docker and automated CI/CD through GitHub Actions.",
+      "Personal full-stack AI project for evidence-backed job-fit assessment. The system structures job requirements, matches them against verified candidate evidence, and presents supporting evidence, gaps, confidence, and recommendations. Built with FastAPI, React/TypeScript, and PostgreSQL, with LLM workflows, a bounded agentic-search flow, and read-only MCP tools. The application was successfully deployed to Microsoft Azure in September 2026; Azure resources were intentionally decommissioned in October 2026 to avoid ongoing costs. Source code, screenshots, architecture, and deployment documentation remain available on GitHub.",
     tags: ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL", "LLM", "MCP", "Docker", "Azure", "GitHub Actions", "CI/CD"],
     link: "https://github.com/AmjadRenno/job-fit-agent-cloud-demo",
-    live: "https://calm-wave-00271bf0f.4.azurestaticapps.net",
+    live: null,
     image: "/projectImages/Job-fit-agent-Social Preview.png",
     featured: true,
     details: {
       da: {
-        description: "Personligt full-stack AI-projekt til evidensbaseret vurdering af jobmatch. Systemet strukturerer jobkrav, matcher dem mod verificeret kandidatinformation og viser evidens, mangler, confidence og anbefalinger. Løsningen er bygget med FastAPI, React/TypeScript og PostgreSQL og inkluderer LLM-workflows, et afgrænset agentic search-flow og read-only MCP-værktøjer. Den offentlige demo kører på Azure med Docker og automatiseret CI/CD via GitHub Actions.",
+        description: "Personligt full-stack AI-projekt til evidensbaseret vurdering af jobmatch. Systemet strukturerer jobkrav, matcher dem mod verificeret kandidatinformation og viser evidens, mangler, confidence og anbefalinger. Løsningen er bygget med FastAPI, React/TypeScript og PostgreSQL og inkluderer LLM-workflows, et afgrænset agentic search-flow og read-only MCP-værktøjer. Applikationen blev succesfuldt deployet til Microsoft Azure i september 2026; Azure-ressourcerne blev bevidst dekommissioneret i oktober 2026 for at undgå løbende omkostninger. Kildekode, screenshots, arkitektur og deployment-dokumentation er fortsat tilgængelig på GitHub.",
         context: "Personligt portfolio-projekt udviklet som et reviewbart beslutningsstøttesystem til job-fit analyse med fokus på evidens, sporbarhed, menneskelig kontrol og sikre AI-grænser.",
         role: "Full-stack udvikler / AI softwareudvikler (personligt projekt).",
         built: [
@@ -259,7 +259,7 @@ export const projects: Project[] = [
         ],
       },
       en: {
-        description: "Personal full-stack AI project for evidence-backed job-fit assessment. The system structures job requirements, matches them against verified candidate evidence, and presents supporting evidence, gaps, confidence, and recommendations. Built with FastAPI, React/TypeScript, and PostgreSQL, with LLM workflows, a bounded agentic-search flow, and read-only MCP tools. The public demo runs on Azure with Docker and automated CI/CD through GitHub Actions.",
+        description: "Personal full-stack AI project for evidence-backed job-fit assessment. The system structures job requirements, matches them against verified candidate evidence, and presents supporting evidence, gaps, confidence, and recommendations. Built with FastAPI, React/TypeScript, and PostgreSQL, with LLM workflows, a bounded agentic-search flow, and read-only MCP tools. The application was successfully deployed to Microsoft Azure in September 2026; Azure resources were intentionally decommissioned in October 2026 to avoid ongoing costs. Source code, screenshots, architecture, and deployment documentation remain available on GitHub.",
         context: "Personal portfolio project developed as a reviewable job-fit decision-support system with emphasis on evidence, traceability, human control, and bounded AI behavior.",
         role: "Full-stack developer / AI software developer (personal project).",
         built: [
@@ -728,7 +728,7 @@ export const locales = {
         [
           { text: "Mit personlige projekt, " },
           { text: "Job Fit Agent", className: "text-accent" },
-          { text: ", er et full-stack AI-system til evidensbaseret job-fit analyse. Jeg arbejder her med FastAPI, React/TypeScript, PostgreSQL, LLM-workflows, afgrænsede agentic flows og MCP. Projektet er containeriseret med Docker og deployet på Azure med automatiseret CI/CD via GitHub Actions, OIDC og Managed Identity." },
+          { text: ", er et full-stack AI-system til evidensbaseret job-fit analyse. Jeg arbejder her med FastAPI, React/TypeScript, PostgreSQL, LLM-workflows, afgrænsede agentic flows og MCP. Projektet blev succesfuldt deployet på Azure i september 2026, hvorefter Azure-ressourcerne blev bevidst dekommissioneret i oktober 2026 for at undgå løbende omkostninger. Kildekode, screenshots, arkitektur og deployment-dokumentation er fortsat tilgængelig på GitHub." },
         ],
         [
           { text: "Jeg har en særlig interesse for " },
@@ -855,7 +855,7 @@ export const locales = {
         [
           { text: "My personal project, " },
           { text: "Job Fit Agent", className: "text-accent" },
-          { text: ", is a full-stack AI system for evidence-backed job-fit analysis. It uses FastAPI, React/TypeScript, PostgreSQL, LLM workflows, bounded agentic flows, and MCP. The project is containerized with Docker and deployed on Azure with automated CI/CD through GitHub Actions, OIDC, and Managed Identity." },
+          { text: ", is a full-stack AI system for evidence-backed job-fit analysis. It uses FastAPI, React/TypeScript, PostgreSQL, LLM workflows, bounded agentic flows, and MCP. The project was successfully deployed to Azure in September 2026, after which the Azure resources were intentionally decommissioned in October 2026 to avoid ongoing costs. Source code, screenshots, architecture, and deployment documentation remain available on GitHub." },
         ],
         [
           { text: "I have a particular interest in " },
